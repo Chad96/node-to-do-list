@@ -20,6 +20,8 @@ async function fetchTodos() {
 
 // Render Todos
 function renderTodos(todos) {
+  console.log('Rendering Todos:', todos); // Log to check if data is updated
+
   const todoTasks = document.getElementById('todoTasks');
   const inProgressTasks = document.getElementById('inProgressTasks');
   const doneTasks = document.getElementById('doneTasks');
