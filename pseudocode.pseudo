@@ -1,0 +1,96 @@
+# Pseudocode: Setting Up a To-Do List Backend Server
+
+1. Import Required Libraries:
+    - Import `express` to create the server.
+    - Import `mongoose` to connect to the MongoDB database.
+    - Import `cors` to allow cross-origin requests.
+    - Import `dotenv` to load environment variables from a `.env` file.
+    - Import `todoRoutes` (custom routes for handling to-do list operations).
+
+2. Load Environment Variables:
+    - Use `dotenv` to load configuration (e.g., database connection string, port) from the `.env` file.
+
+3. Initialize the Express App:
+    - Create an instance of the Express application.
+
+4. Set the Server Port:
+    - Use the `PORT` value from the environment variables or default to `5000` if not specified.
+
+5. Set Up Middleware:
+    - Enable `cors` to allow requests from different origins.
+    - Enable `express.json()` to parse incoming JSON data in request bodies.
+
+6. Connect to MongoDB:
+    - Use `mongoose.connect()` to connect to the MongoDB database using the connection string from the `.env` file.
+    - If the connection is successful, log "MongoDB Connected".
+    - If the connection fails, log the error message.
+
+7. Set Up Routes:
+    - Use the imported `todoRoutes` to handle all requests starting with `/api/todos`.
+
+8. Start the Server:
+    - Use `app.listen()` to start the server on the specified port.
+    - Log a message to the console indicating that the server is running and on which port.
+
+---
+
+### Functions in Human-Readable Format:
+
+1. **Load Environment Variables**:
+    - Purpose: Load sensitive configuration (e.g., database connection string, port) from the `.env` file.
+    - Example:
+        ```plaintext
+        dotenv.config();
+        ```
+
+2. **Initialize Express App**:
+    - Purpose: Create an instance of the Express application to handle HTTP requests.
+    - Example:
+        ```plaintext
+        const app = express();
+        ```
+
+3. **Set the Server Port**:
+    - Purpose: Define the port on which the server will run, using the value from `.env` or a default (5000).
+    - Example:
+        ```plaintext
+        const PORT = process.env.PORT || 5000;
+        ```
+
+4. **Enable Middleware**:
+    - Purpose: Configure the app to handle cross-origin requests and parse JSON data.
+    - Example:
+        ```plaintext
+        app.use(cors());
+        app.use(express.json());
+        ```
+
+5. **Connect to MongoDB**:
+    - Purpose: Establish a connection to the MongoDB database using the connection string from `.env`.
+    - Example:
+        ```plaintext
+        mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+            .then(() => console.log('MongoDB Connected'))
+            .catch(err => console.error('MongoDB Connection Error:', err));
+        ```
+
+6. **Set Up Routes**:
+    - Purpose: Use custom routes to handle all requests related to to-do items (e.g., adding, deleting, or updating tasks).
+    - Example:
+        ```plaintext
+        app.use('/api/todos', todoRoutes);
+        ```
+
+7. **Start the Server**:
+    - Purpose: Start the server and listen for incoming requests on the specified port.
+    - Example:
+        ```plaintext
+        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+        ```
+
+---
+
+### Final Notes:
+- This pseudocode provides a clear, step-by-step explanation of the server setup process.
+- Each function is described in plain English to make it easy to understand for non-technical readers or beginners.
+- Proper indentation is used to visually represent the structure of the code.
