@@ -8,13 +8,13 @@ This is a simple To-Do List application built using **HTML, CSS, JavaScript** fo
 
 1. **User Authentication**:
    - Users must register and log in to access the To-Do List page.
-   - Secure password storage using bcrypt.
+   - Secure password storage using Firebase Authentication.
 
 2. **To-Do List Management**:
    - Add new tasks with a title, description, and priority level.
    - Remove tasks.
    - Mark tasks as completed.
-   - Drag-and-drop tasks between different columns (e.g., To Do, In Progress, Done).
+   - Move tasks between different columns (e.g., To Do, In Progress, Done).
 
 3. **Priority-Based Color Coding**:
    - Tasks are color-coded based on their priority level (e.g., High, Medium, Low).
